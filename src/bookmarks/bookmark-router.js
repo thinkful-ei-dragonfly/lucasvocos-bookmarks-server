@@ -22,14 +22,25 @@ const bookmarks = [
   }
 ]
 
-bookmarkRouter
-  .route('/bookmarks')
-  .get((req, res) => {
+bookmarkRouter.get('/', (req, res) => {
     return res
       .status(200)
       .json(bookmarks)
   })
-  .post(bodyParser, (req, res) => {
+  bookmarkRouter.get('/:id',(req, res, next) => {
+      const { id } = req.params
+      const bookmark = bookmarks.find(b => b.id == id)
+      // find the bookmark where the id matches the id from the params
+
+      if (!bookmark) {
+        logger.error(`Bookmark with id ${id} not found.`)
+        return res
+          .status(404)
+          .send('Bookmark not found')
+      }
+      res.json(bookmark)
+    })
+bookmarkRouter.post('/', bodyParser, (req, res) => {
     const { title, description, url, rating } = req.body;
 
     if (!title) {
@@ -82,23 +93,7 @@ bookmarkRouter
       .json(bookmark)
 
   })
-
-bookmarkRouter
-  .route('/bookmarks/:id')
-  .get((req, res, next) => {
-    const { id } = req.params
-    const bookmark = bookmarks.find(b => b.id == id)
-    // find the bookmark where the id matches the id from the params
-
-    if (!bookmark) {
-      logger.error(`Bookmark with id ${id} not found.`)
-      return res
-        .status(404)
-        .send('Bookmark not found')
-    }
-    res.json(bookmark)
-  })
-  .delete(bodyParser, (req, res) => {
+bookmarkRouter.delete('/:id',bodyParser, (req, res) => {
     const { id } = req.params;
     const listIndex = bookmarks.findIndex(book => book.id == id)
 

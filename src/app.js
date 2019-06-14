@@ -43,7 +43,7 @@ app.use(function errorHandler(error, req, res, next) {
   res.status(500).json(response);
 })
 
-app.use(bookmarkRouter)
+app.use('/bookmarks', bookmarkRouter)
 
 
 module.exports = app;
