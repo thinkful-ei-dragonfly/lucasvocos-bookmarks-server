@@ -9,7 +9,7 @@ const { NODE_ENV } = require('./config')
 
 const app = express();
 
-app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common';));
+app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common'));
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
