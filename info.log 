@@ -13,3 +13,4 @@
 {"message":"Bookmark with id 2 deleted","level":"info"}
 {"message":"Card with id 32b5f38e-8946-4f3c-bbd0-079c0d33b71a created","level":"info"}
 {"message":"Bookmark with id 32b5f38e-8946-4f3c-bbd0-079c0d33b71a deleted","level":"info"}
+{"message":"Unauthorized request to path /bookmarks/","level":"error"}
