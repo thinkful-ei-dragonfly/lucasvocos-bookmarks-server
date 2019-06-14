@@ -3,7 +3,7 @@ const uuid = require('uuid/v4')
 const logger = require('../logger')
 
 const bookmarkRouter = express.Router()
-const bodyParser = express.json()
+// const bodyParser = express.json()
 
 const bookmarks = [
   {
@@ -40,7 +40,7 @@ bookmarkRouter.get('/', (req, res) => {
       }
       res.json(bookmark)
     })
-bookmarkRouter.post('/', bodyParser, (req, res) => {
+bookmarkRouter.post('/', (req, res) => {
     const { title, description, url, rating } = req.body;
 
     if (!title) {
@@ -93,7 +93,7 @@ bookmarkRouter.post('/', bodyParser, (req, res) => {
       .json(bookmark)
 
   })
-bookmarkRouter.delete('/:id',bodyParser, (req, res) => {
+bookmarkRouter.delete('/:id', (req, res) => {
     const { id } = req.params;
     const listIndex = bookmarks.findIndex(book => book.id == id)
 
