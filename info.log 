@@ -9,3 +9,7 @@
 {"message":"Card with id cd18aa54-2c89-43ce-a416-935949618096 created","level":"info"}
 {"message":"Bookmark with id cd18aa54-2c89-43ce-a416-935949618096 deleted","level":"info"}
 {"message":"Card with id 6bab39cf-1087-47df-bfac-17a6b9c61af7 created","level":"info"}
+{"message":"Bookmark with id 1 deleted","level":"info"}
+{"message":"Bookmark with id 2 deleted","level":"info"}
+{"message":"Card with id 32b5f38e-8946-4f3c-bbd0-079c0d33b71a created","level":"info"}
+{"message":"Bookmark with id 32b5f38e-8946-4f3c-bbd0-079c0d33b71a deleted","level":"info"}
